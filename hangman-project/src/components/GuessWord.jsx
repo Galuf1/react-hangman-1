@@ -7,20 +7,14 @@ function GuessWord(props) {
             //loops through guest list and checks each letter in the word
             if(props.guess.includes(props.word[i])){
                 //if exists, pushes the actual letter in word to board
-                board.push(<span> {props.word[i]} </span>)
+                board.push(<span key={`${i}`}> {props.word[i]} </span>)
             } else {
                 //else, pushes _ to board
-                board.push(<span> _ </span>)
-                getSnake()
+                board.push(<span key={`${i}`}> _ </span>)
             }
         }
         return board
     }
-
-    
-
-    
-
     return(
         <div>{createBoard()}</div>
     )
